@@ -42,7 +42,7 @@ pandoc --standalone --to man %{SOURCE1} -o ccls.1
 # Compress the man page
 gzip ccls.1
 # Generate a Makefile for release in the "build" directory
-cmake -DCCLS_VERSION=%{version} -S. -Bbuild
+cmake -DCCLS_VERSION=%{version} -DCMAKE_CXX_COMPILER=clang++ -DUSE_SYSTEM_RAPIDJSON=ON -S. -Bbuild
 # Perform a release build in the "build" directory
 cmake --build build
 # Test: print out the ccls version
