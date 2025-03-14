@@ -55,7 +55,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_mandir}/man1
 # Install files with permissions
-install -m 755 Release/ccls %{buildroot}/%{_bindir}/ccls
+install -m 755 build/ccls %{buildroot}/%{_bindir}/ccls
 install -m 644 ccls.1.gz %{buildroot}/%{_mandir}/man1/ccls.1.gz
 
 %files
